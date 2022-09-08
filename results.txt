@@ -1,0 +1,140 @@
+----------------------------------------MVC App----------------------------------------------------------------
+
+wrk -t12 -c400 -d30s http://localhost:8080/mvc/helloWorld
+Running 30s test @ http://localhost:8080/mvc/helloWorld
+  12 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    47.55ms   95.36ms   1.40s    88.16%
+    Req/Sec     1.74k     0.87k    5.90k    68.48%
+  622139 requests in 30.03s, 76.65MB read
+  Socket errors: connect 157, read 151, write 0, timeout 0
+Requests/sec:  20715.57
+Transfer/sec:      2.55MB
+
+wrk -t12 -c400 -d30s http://localhost:8080/mvc/mongoSingle
+Running 30s test @ http://localhost:8080/mvc/mongoSingle
+  12 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    36.58ms   76.26ms   1.06s    96.94%
+    Req/Sec   742.38    282.95     2.02k    67.24%
+  259855 requests in 30.05s, 34.24MB read
+  Socket errors: connect 157, read 157, write 0, timeout 0
+Requests/sec:   8647.53
+Transfer/sec:      1.14MB
+
+wrk -t12 -c400 -d30s http://localhost:8080/mvc/mongoMultiple
+Running 30s test @ http://localhost:8080/mvc/mongoMultiple
+  12 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   272.76ms  114.61ms   1.37s    97.60%
+    Req/Sec    76.65     36.06   212.00     63.85%
+  26670 requests in 30.06s, 9.67MB read
+  Socket errors: connect 157, read 149, write 0, timeout 0
+Requests/sec:    887.33
+Transfer/sec:    329.43KB
+
+wrk -t12 -c400 -d30s http://localhost:8080/mvc/apiSingle
+Running 30s test @ http://localhost:8080/mvc/apiSingle
+  12 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   242.93ms   60.40ms 403.01ms   80.63%
+    Req/Sec    82.28     50.34   280.00     70.48%
+  29400 requests in 30.08s, 3.54MB read
+  Socket errors: connect 157, read 160, write 0, timeout 0
+Requests/sec:    977.27
+Transfer/sec:    120.40KB
+
+wrk -t12 -c400 -d30s http://localhost:8080/mvc/apiMultiple
+Running 30s test @ http://localhost:8080/mvc/apiMultiple
+  12 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   605.22ms  180.47ms   1.02s    80.82%
+    Req/Sec    43.00     39.99   270.00     84.98%
+  11796 requests in 30.03s, 1.54MB read
+  Socket errors: connect 157, read 156, write 0, timeout 0
+Requests/sec:    392.80
+Transfer/sec:     52.55KB
+
+
+wrk -t12 -c400 -d30s http://localhost:8080/mvc/realApi
+Running 30s test @ http://localhost:8080/mvc/realApi
+  12 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.26s   483.09ms   2.00s    63.70%
+    Req/Sec     8.03      6.40    40.00     79.13%
+  1996 requests in 30.06s, 6.99MB read
+  Socket errors: connect 157, read 155, write 0, timeout 1850
+Requests/sec:     66.41
+Transfer/sec:    238.10KB
+
+
+
+----------------------------------------Reactor App----------------------------------------------------------------
+
+wrk -t12 -c400 -d30s http://localhost:8080/reactor/helloWorld
+Running 30s test @ http://localhost:8080/reactor/helloWorld
+  12 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.15ms    2.11ms  62.07ms   88.40%
+    Req/Sec     2.80k     0.98k    5.31k    66.06%
+  1003406 requests in 30.02s, 93.78MB read
+  Socket errors: connect 157, read 124, write 0, timeout 0
+Requests/sec:  33425.74
+Transfer/sec:      3.12MB
+
+
+wrk -t12 -c400 -d30s http://localhost:8080/reactor/mongoSingle
+Running 30s test @ http://localhost:8080/reactor/mongoSingle
+  12 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    51.06ms  126.39ms   1.05s    95.43%
+    Req/Sec   783.16    263.38     1.42k    63.90%
+  258656 requests in 30.04s, 20.97MB read
+  Socket errors: connect 157, read 119, write 0, timeout 0
+Requests/sec:   8609.54
+Transfer/sec:    714.66KB
+
+wrk -t12 -c400 -d30s http://localhost:8080/reactor/mongoMultiple
+Running 30s test @ http://localhost:8080/reactor/mongoMultiple
+  12 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   312.99ms  117.27ms   1.40s    97.42%
+    Req/Sec    66.34     29.66   170.00     70.25%
+  23162 requests in 30.05s, 7.22MB read
+  Socket errors: connect 157, read 199, write 0, timeout 0
+Requests/sec:    770.76
+Transfer/sec:    246.13KB
+
+wrk -t12 -c400 -d30s http://localhost:8080/reactor/apiSingle
+Running 30s test @ http://localhost:8080/reactor/apiSingle
+  12 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   203.59ms    2.28ms 224.77ms   69.20%
+    Req/Sec    97.28     34.10   300.00     71.08%
+  35133 requests in 30.06s, 3.05MB read
+  Socket errors: connect 157, read 100, write 0, timeout 0
+Requests/sec:   1168.78
+Transfer/sec:    103.87KB
+
+wrk -t12 -c400 -d30s http://localhost:8080/reactor/apiMultiple
+Running 30s test @ http://localhost:8080/reactor/apiMultiple
+  12 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   303.39ms    2.35ms 316.39ms   62.86%
+    Req/Sec    65.95     23.82   270.00     85.70%
+  23646 requests in 30.08s, 2.30MB read
+  Socket errors: connect 157, read 101, write 0, timeout 0
+Requests/sec:    786.01
+Transfer/sec:     78.29KB
+
+
+wrk -t12 -c400 -d30s http://localhost:8080/reactor/realApi
+Running 30s test @ http://localhost:8080/reactor/realApi
+  12 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.17s   489.77ms   1.99s    61.34%
+    Req/Sec     8.09      6.21    40.00     80.41%
+  2098 requests in 30.10s, 7.28MB read
+  Socket errors: connect 157, read 110, write 0, timeout 1979
+Requests/sec:     69.70
+Transfer/sec:    247.60KB
